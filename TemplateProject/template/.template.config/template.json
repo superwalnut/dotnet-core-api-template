@@ -1,0 +1,13 @@
+{
+  "author": "superwalnut",
+  "name": ".Net Core API Autofac+Swagger+Serilog",
+
+  "identity": "Superwalnut.NetCoreApiTemplate",
+  "shortName": "core-api-autofac-swagger-serilog",
+  "classifications": ["Web"],
+  "tags": {
+    "language": "C#"
+  },
+
+  "sourceName": "DotnetCoreApiDemo"
+}
