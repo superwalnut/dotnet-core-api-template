@@ -43,7 +43,6 @@ namespace DotnetCoreApiDemo
                     });
             }
 
-
             var builder = new ContainerBuilder();
             builder.Populate(services);
             builder.RegisterModule<ApiModule>();
