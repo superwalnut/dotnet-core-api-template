@@ -25,7 +25,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Build Nuget
       working-directory: ./TemplateProject
-      run: dotnet pack -o ./output -c Release /p:Version=1.0.${{github.run_id}}
+      run: dotnet pack -o ./output -c Release /p:Version=1.1.0-${{github.run_id}}
     - name: Push Nuget
       working-directory: ./TemplateProject
-      run: dotnet nuget push ./output/Superwalnut.NetCoreApiTemplate.1.0.${{github.run_id}}.nupkg -k ${{secrets.NUGET_API}} -s https://api.nuget.org/v3/index.json
+      run: dotnet nuget push ./output/Superwalnut.NetCoreApiTemplate.1.1.0-${{github.run_id}}.nupkg -k ${{secrets.NUGET_API}} -s https://api.nuget.org/v3/index.json
