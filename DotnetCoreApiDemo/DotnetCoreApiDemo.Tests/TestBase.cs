@@ -1,15 +1,6 @@
-﻿using System;
-using System.Diagnostics;
-using System.Globalization;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using AutoFixture;
+﻿using AutoFixture;
 using AutoFixture.AutoMoq;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Microsoft.AspNetCore.TestHost;
-using Newtonsoft.Json;
 using NUnit.Framework;
 
 namespace DotnetCoreApiDemo.Tests
