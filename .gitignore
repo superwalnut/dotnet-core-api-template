@@ -7,3 +7,5 @@ TemplateProject/output
 TemplateProject/images/.DS_Store
 TemplateProject/.DS_Store
 .DS_Store
+DotnetCoreApiDemo/DotnetCoreApiDemo.Tests/bin
+DotnetCoreApiDemo/DotnetCoreApiDemo.Tests/obj

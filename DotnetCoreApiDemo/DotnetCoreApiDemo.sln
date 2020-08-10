@@ -8,6 +8,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetCoreApiDemo.Tests", "DotnetCoreApiDemo.Tests\DotnetCoreApiDemo.Tests.csproj", "{AC3E5E0C-B2DF-45F1-AAA0-8DC9BA3FBBFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{67FEF084-8D7B-45A6-A6D0-434386BDC153}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67FEF084-8D7B-45A6-A6D0-434386BDC153}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67FEF084-8D7B-45A6-A6D0-434386BDC153}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC3E5E0C-B2DF-45F1-AAA0-8DC9BA3FBBFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC3E5E0C-B2DF-45F1-AAA0-8DC9BA3FBBFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC3E5E0C-B2DF-45F1-AAA0-8DC9BA3FBBFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC3E5E0C-B2DF-45F1-AAA0-8DC9BA3FBBFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
