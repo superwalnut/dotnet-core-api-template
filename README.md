@@ -33,6 +33,10 @@
 4. pre-Configured AutoMapper 10.0.0.
 5. pre-Installed Newtonsoft.Json 12.0.3
 
+6. pre-Setup NUnit Tests
+7. pre-Setup AutoFixture with Moq
+8. pre-Setup FluentAssertions
+
 ---
 
 ## Installation
@@ -62,7 +66,9 @@ This creates a project in folder `NetCoreDemo`
 
 ## Documentation
 
-- Pre-configured Autofac ContainerBuilder() that you can populate IServiceCollection and register your autofac modules in Startup.cs. Taking ApiModule from the template as an example, you can also create modules for your Service Layer, Repository Layer, etc.
+### Pre-configured Autofac 
+
+ContainerBuilder() that you can populate IServiceCollection and register your autofac modules in Startup.cs. Taking ApiModule from the template as an example, you can also create modules for your Service Layer, Repository Layer, etc.
 
 ```c#
         public IServiceProvider ConfigureServices(IServiceCollection services)
@@ -88,7 +94,9 @@ Serilog & Automapper are registered in the ApiModule,
     }
 ```
 
-- Pre-configured swagger endpoint, that you can access via https://localhost:5001/swagger
+### Pre-configured swagger endpoint
+
+You can access via https://localhost:5001/swagger
 
 ```c#
         public IServiceProvider ConfigureServices(IServiceCollection services)
@@ -121,7 +129,9 @@ Serilog & Automapper are registered in the ApiModule,
         }
 ```
 
-- Pre-configured Serilog with console sinks in the appsettings.json
+### Pre-configured Serilog 
+
+With console sinks in the appsettings.json
 
 ```json
   "Serilog": {
@@ -163,7 +173,9 @@ And registered in ApiModule,
     }
 ```
 
-- Pre-configured AutoMapper with created example profile,
+### Pre-configured AutoMapper 
+
+With created example profile,
 
 ```c#
     public class ApiAutoMapperProfile : Profile
@@ -205,6 +217,52 @@ Consumed in the controller method,
 
 ```c#
     var dto = _mapper.Map<List<Foo>, List<FooDto>>(result);
+```
+
+### Pre-configured Unit tests
+
+Setup Fixture for your test
+
+```c#
+        protected IFixture Fixture { get; private set; }
+
+        [SetUp]
+        public void SetupBase()
+        {
+            Fixture = new Fixture().Customize(new AutoMoqCustomization());
+            Fixture.Customize<BindingInfo>(c => c.OmitAutoProperties());
+            Fixture.Behaviors.Add(new OmitOnRecursionBehavior());
+        }
+```
+
+Using Fixture To create mocks
+
+```c#
+        [SetUp]
+        public void Setup()
+        {
+            _loggerMock = Fixture.Freeze<Mock<ILogger>>();
+            _mapperMock = Fixture.Freeze<Mock<IMapper>>();
+
+            _dtos = new List<FooDto> { new FooDto { Id = new Guid("59a54f7c-f7ea-41dc-89a8-d34aef7c8932"), Name = "test1" } };
+            _mapperMock.Setup(x => x.Map<List<Foo>, List<FooDto>>(It.IsAny<List<Foo>>())).Returns(_dtos);
+        }
+```
+
+And create instances of targeting objects
+
+```c#
+        var target = Fixture.Create<FooController>();
+```
+
+Validate via FluentAssertions 
+
+```c#
+    okObjectResult.Should().NotBeNull();
+
+    okObjectResult.Value.Should().BeOfType<List<FooDto>>();
+
+    okObjectResult.Value.As<List<FooDto>>().Should().BeSameAs(_dtos);
 ```
 
 ## Support

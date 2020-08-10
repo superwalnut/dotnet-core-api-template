@@ -16,6 +16,9 @@
     3. pre-Configured Serilog 2.9.0 console sinks.
     4. pre-Configured AutoMapper 10.0.0.
     5. pre-Installed Newtonsoft.Json 12.0.3
+    6. pre-Setup NUnit Tests
+    7. pre-Setup AutoFixture with Moq
+    8. pre-Setup FluentAssertions
     using `dotnet new -i Superwalnut.NetCoreApiTemplate` to install project as a template,
     And using `dotnet new core-api-autofac-swagger-serilog` to create a project with the template.
     </Description>
