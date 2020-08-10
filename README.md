@@ -5,6 +5,9 @@
     using `dotnet new -i Superwalnut.NetCoreApiTemplate` to install project as a template,
     And using `dotnet new core-api-autofac-swagger-serilog` to create a project with the template.
 
+Read full article on Medium
+https://medium.com/@mrkevin.wang/create-a-dotnet-core-api-boilerplate-template-with-most-popular-open-source-libraries-62ca1ab874c8
+
 **Pre-request**
 
 - .Net Core 3.1
