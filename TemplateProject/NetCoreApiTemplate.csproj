@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <IsPackable>true</IsPackable>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
     <PackageType>Template</PackageType>
     <PackageId>Superwalnut.NetCoreApiTemplate</PackageId>

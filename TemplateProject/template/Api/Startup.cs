@@ -1,18 +1,12 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using DotnetCoreApiDemo.Modules;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace DotnetCoreApiDemo
@@ -42,7 +36,6 @@ namespace DotnetCoreApiDemo
                         c.SwaggerDoc("v1", new OpenApiInfo { Title = "Api Swagger", Version = "v1" });
                     });
             }
-
 
             var builder = new ContainerBuilder();
             builder.Populate(services);

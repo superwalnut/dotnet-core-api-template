@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using DotnetCoreApiDemo.Models;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
-using System.Linq;
 
 namespace DotnetCoreApiDemo.Controllers
 {
@@ -35,9 +33,9 @@ namespace DotnetCoreApiDemo.Controllers
 
             var dto = _mapper.Map<List<Foo>, List<FooDto>>(result);
 
-            _logger.Information("getting {count} foos", result.Count);
+            _logger.Information("getting {count} foos", dto.Count);
 
-            return Ok(result);
+            return Ok(dto);
         }
     }
 }

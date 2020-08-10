@@ -22,7 +22,7 @@ namespace DotnetCoreApiDemo.Tests
 
         [SetUp]
         public void Setup()
-        {            
+        {
             _loggerMock = Fixture.Freeze<Mock<ILogger>>();
             _mapperMock = Fixture.Freeze<Mock<IMapper>>();
 
@@ -33,7 +33,7 @@ namespace DotnetCoreApiDemo.Tests
         [Test]
         public void ServiceModuleShouldRegisterServices()
         {
-            var target = Fixture.Create<FooController>();            
+            var target = Fixture.Create<FooController>();
 
             IActionResult result = target.Get();
 
