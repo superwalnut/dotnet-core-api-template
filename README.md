@@ -15,6 +15,10 @@ https://medium.com/@mrkevin.wang/create-a-dotnet-core-api-boilerplate-template-w
 - [Swagger](https://swagger.io/)
 - [Serilog](https://serilog.net/)
 - [AutoMapper](https://automapper.org/)
+- [NUnit](https://nunit.org/)
+- [Moq](https://github.com/moq/moq4)
+- [AutoFixture](https://github.com/AutoFixture/AutoFixture)
+- [FluentAssertions](https://github.com/fluentassertions/fluentassertions)
 
 ## Table of Contents
 
